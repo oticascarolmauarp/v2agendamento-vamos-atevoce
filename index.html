@@ -50,6 +50,9 @@
         .hero p {font-size:1rem;margin-bottom:1.5rem;opacity:.95;line-height:1.8;}
         .btn-hero {background:var(--cy);color:var(--cb);border:none;padding:1rem 2rem;font-size:1rem;font-weight:700;border-radius:50px;cursor:pointer;transition:all .3s;display:inline-block;box-shadow:var(--shl);}
         .btn-hero:hover {transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,204,0,.3);}
+        .form-inline {background:#f9f9f9;padding:2rem 1rem;}
+        .form-inline-cont {max-width:600px;margin:0 auto;}
+        .form-inline-title {color:var(--cb);font-size:1.3rem;font-weight:700;margin-bottom:1rem;text-align:center;}
         .benefits {padding:3rem 1rem;background:#fff;}
         .benefits-cont {max-width:1200px;margin:0 auto;}
         .title {text-align:center;color:var(--cb);font-size:2rem;font-weight:700;margin-bottom:3rem;}
@@ -59,14 +62,6 @@
         .icon {font-size:2.5rem;margin-bottom:1rem;display:block;}
         .card h3 {color:var(--cb);font-size:1.2rem;margin-bottom:.8rem;font-weight:700;}
         .card p {color:var(--ct);font-size:.95rem;line-height:1.6;}
-        .video-sec {padding:3rem 1rem;background:#f9f9f9;text-align:center;}
-        .video-cont {max-width:600px;margin:0 auto;}
-        .video-title {color:var(--cb);font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;}
-        .video-wrap {position:relative;width:100%;max-width:500px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:var(--shl);aspect-ratio:16/9;}
-        .video-wrap iframe {width:100%;height:100%;border:none;}
-        .video-cta {margin-top:2rem;}
-        .video-cta-btn {background:var(--cy);color:var(--cb);border:none;padding:1rem 2rem;font-size:1rem;font-weight:700;border-radius:50px;cursor:pointer;transition:all .3s;display:inline-block;box-shadow:var(--shl);}
-        .video-cta-btn:hover {transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,204,0,.3);}
         .form-sec {display:none;}
         .form-sec.active {display:block;}
         .progress-cont {background:var(--cg);padding:1.5rem 1rem;max-width:600px;margin:0 auto;}
@@ -137,14 +132,27 @@
             </div>
         </section>
 
-        <section class="video-sec">
-            <div class="video-cont">
-                <h2 class="video-title">Nós Vamos até Você!</h2>
-                <div class="video-wrap">
-                    <iframe src="https://www.youtube.com/embed/_0eG0j-MhVw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="video-cta">
-                    <button class="video-cta-btn" onclick="startBooking()">Agendar Agora</button>
+        <section class="form-inline" id="formInlineSection">
+            <div class="form-inline-cont">
+                <h2 class="form-inline-title">⏰ Agende sua visita agora</h2>
+                <div style="max-width:400px;margin:0 auto;">
+                    <div class="form-group">
+                        <label class="label">Cidade <span class="required">*</span></label>
+                        <select class="select" id="cityInline" required>
+                            <option value="">Selecione a cidade</option>
+                            <option value="Mauá">Mauá</option>
+                            <option value="Ribeirão Pires">Ribeirão Pires</option>
+                            <option value="Santo André">Santo André</option>
+                            <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="neighborhoodGroupInline" style="display:none;">
+                        <label class="label">Bairro <span class="required">*</span></label>
+                        <select class="select" id="neighborhoodInline" required>
+                            <option value="">Selecione o bairro</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" style="width:100%;" onclick="validateLocationInline()">Verificar Disponibilidade</button>
                 </div>
             </div>
         </section>
@@ -389,9 +397,46 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             initializeCityListener();
+            initializeCityListenerInline();
             renderDateOptions();
             trackPageView();
         });
+
+        function initializeCityListenerInline() {
+            const citySelect = document.getElementById('cityInline');
+            const neighborhoodGroup = document.getElementById('neighborhoodGroupInline');
+            const neighborhoodSelect = document.getElementById('neighborhoodInline');
+
+            citySelect.addEventListener('change', function() {
+                formData.city = this.value;
+                neighborhoodGroup.style.display = this.value ? 'block' : 'none';
+                if (this.value && neighborhoods[this.value]) {
+                    neighborhoodSelect.innerHTML = '<option value="">Selecione o bairro</option>';
+                    neighborhoods[this.value].forEach(nb => {
+                        const option = document.createElement('option');
+                        option.value = nb;
+                        option.textContent = nb;
+                        neighborhoodSelect.appendChild(option);
+                    });
+                }
+            });
+
+            neighborhoodSelect.addEventListener('change', function() {
+                formData.neighborhood = this.value;
+            });
+        }
+
+        function validateLocationInline() {
+            if (!formData.city || !formData.neighborhood) {
+                alert('Por favor, selecione cidade e bairro');
+                return;
+            }
+            trackEvent('location_verified_inline', { city: formData.city });
+            document.getElementById('introductionSection').classList.add('hidden');
+            document.getElementById('bookingSection').classList.add('active');
+            document.querySelector('.header-cta').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
 
         function getNextTuesdaysAndThursdays(startDate, numberOfDays) {
             const dates = [];
