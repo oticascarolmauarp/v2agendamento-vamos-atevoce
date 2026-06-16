@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Óticas Carol - Vamos até você! Agendamento online de atendimento domiciliar na ABC Paulista.">
+    <meta property="og:title" content="Óticas Carol - Vamos até Você">
+    <meta property="og:description" content="Agende sua visita gratuita. Especialista leva óculos até você.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vamosatevoce.com">
+    <meta name="theme-color" content="#003057">
+    <title>Óticas Carol - Agende Seu Atendimento | Vamos até Você</title>
+
+    <!-- FACEBOOK PIXEL -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init','1005457565239540');
+        fbq('track','PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1005457565239540&ev=PageView&noscript=1" /></noscript>
+
+    <!-- GOOGLE ANALYTICS 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2683ZNXYN1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2683ZNXYN1');
+    </script>
+
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;}
+        :root {--cb:#003057;--cy:#FFCC00;--cg:#F4F4F4;--ct:#4F5E6F;--be:#E5E7EB;--sh:0 2px 8px rgba(0,48,87,.08);--shl:0 10px 25px rgba(0,48,87,.15);}
+        body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;background:#fff;color:#1f2937;line-height:1.6;}
+        header {background:#fff;border-bottom:1px solid var(--be);padding:1rem;position:sticky;top:0;z-index:100;box-shadow:var(--sh);}
+        .header-container {max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+        .logo {text-align:center;flex:1;}
+        .logo-text {font-size:1.1rem;font-weight:600;color:var(--cb);}
+        .logo-text .carol {color:var(--cy);}
+        .logo-tagline {font-size:.55rem;text-transform:uppercase;letter-spacing:.25em;color:var(--cb);font-weight:600;}
+        .header-cta {background:var(--cy);color:var(--cb);border:none;padding:.6rem 1.2rem;border-radius:50px;cursor:pointer;font-weight:700;transition:all .3s;display:none;}
+        .header-cta:hover {transform:translateY(-2px);box-shadow:var(--shl);}
+        .intro {display:block;}
+        .intro.hidden {display:none;}
+        .hero {background:linear-gradient(135deg,var(--cb) 0%,#1a4d6d 100%);color:#fff;padding:2rem 1rem;position:relative;overflow:hidden;}
+        .hero::before {content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:var(--cy);border-radius:50%;opacity:.05;}
+        .hero-cont {max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+        .hero h1 {font-size:2.2rem;margin-bottom:1rem;font-weight:700;line-height:1.3;}
+        .badge {display:inline-block;background:var(--cy);color:var(--cb);padding:.5rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1rem;}
+        .hero p {font-size:1rem;margin-bottom:1.5rem;opacity:.95;line-height:1.8;}
+        .btn-hero {background:var(--cy);color:var(--cb);border:none;padding:1rem 2rem;font-size:1rem;font-weight:700;border-radius:50px;cursor:pointer;transition:all .3s;display:inline-block;box-shadow:var(--shl);}
+        .btn-hero:hover {transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,204,0,.3);}
+        .benefits {padding:3rem 1rem;background:#fff;}
+        .benefits-cont {max-width:1200px;margin:0 auto;}
+        .title {text-align:center;color:var(--cb);font-size:2rem;font-weight:700;margin-bottom:3rem;}
+        .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+        .card {padding:2rem;background:var(--cg);border-radius:12px;text-align:center;transition:all .3s;border:1px solid var(--be);}
+        .card:hover {transform:translateY(-5px);box-shadow:var(--shl);border-color:var(--cy);}
+        .icon {font-size:2.5rem;margin-bottom:1rem;display:block;}
+        .card h3 {color:var(--cb);font-size:1.2rem;margin-bottom:.8rem;font-weight:700;}
+        .card p {color:var(--ct);font-size:.95rem;line-height:1.6;}
+        .video-sec {padding:3rem 1rem;background:#f9f9f9;text-align:center;}
+        .video-cont {max-width:600px;margin:0 auto;}
+        .video-title {color:var(--cb);font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;}
+        .video-wrap {position:relative;width:100%;max-width:500px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:var(--shl);aspect-ratio:16/9;}
+        .video-wrap iframe {width:100%;height:100%;border:none;}
+        .video-cta {margin-top:2rem;}
+        .video-cta-btn {background:var(--cy);color:var(--cb);border:none;padding:1rem 2rem;font-size:1rem;font-weight:700;border-radius:50px;cursor:pointer;transition:all .3s;display:inline-block;box-shadow:var(--shl);}
+        .video-cta-btn:hover {transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,204,0,.3);}
+        .form-sec {display:none;}
+        .form-sec.active {display:block;}
+        .progress-cont {background:var(--cg);padding:1.5rem 1rem;max-width:600px;margin:0 auto;}
+        .progress-bar {width:100%;height:3px;background:#ddd;border-radius:3px;overflow:hidden;margin-bottom:.8rem;}
+        .progress-fill {height:100%;background:var(--cb);transition:width .5s ease;}
+        .progress-labels {display:flex;justify-content:space-between;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#999;font-weight:600;}
+        main {max-width:600px;margin:0 auto;padding:1.5rem;min-height:100vh;}
+        .step {display:none;animation:fadeIn .5s ease;}
+        .step.active {display:block;}
+        @keyframes fadeIn {from {opacity:0;transform:translateY(10px);} to {opacity:1;transform:translateY(0);}}
+        .step-title {font-size:1.5rem;color:var(--cb);margin-bottom:.5rem;font-weight:700;}
+        .step-sub {color:var(--ct);font-size:.95rem;margin-bottom:1.5rem;}
+        .form-group {margin-bottom:1.5rem;}
+        .label {display:block;font-weight:600;color:var(--cb);margin-bottom:.5rem;font-size:.95rem;}
+        .input, .select, .textarea {width:100%;padding:.85rem 1rem;border:1px solid var(--be);border-radius:6px;font-size:.95rem;font-family:inherit;transition:all .3s;}
+        .input:focus, .select:focus, .textarea:focus {outline:0;border-color:var(--cb);box-shadow:0 0 0 3px rgba(0,48,87,.1);}
+        .textarea {resize:vertical;min-height:80px;}
+        .radio-item, .check-item {display:flex;align-items:center;gap:.8rem;padding:.8rem;border:1px solid var(--be);border-radius:6px;cursor:pointer;transition:all .3s;margin-bottom:.8rem;}
+        .radio-item:hover, .check-item:hover {border-color:var(--cb);background:rgba(0,48,87,.02);}
+        .radio-item input, .check-item input {cursor:pointer;width:18px;height:18px;}
+        .radio-item label, .check-item label {cursor:pointer;flex:1;font-weight:500;margin:0;}
+        .btns {display:flex;gap:1rem;margin-top:2rem;}
+        .btn {padding:1rem 1.5rem;border:none;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;transition:all .3s;display:inline-block;text-align:center;flex:1;}
+        .btn-primary {background:var(--cy);color:var(--cb);}
+        .btn-primary:hover {transform:translateY(-2px);box-shadow:var(--shl);}
+        .btn-secondary {background:#fff;color:var(--cb);border:2px solid var(--cb);}
+        .btn-secondary:hover {background:var(--cg);}
+        .btn-wa {background:#25D366;color:#fff;width:100%;margin-top:1rem;}
+        .btn-wa:hover {background:#1FA854;transform:translateY(-2px);box-shadow:var(--shl);}
+        .summary-card {background:var(--cg);padding:1.2rem;border-radius:8px;margin-bottom:1rem;}
+        .summary-header {display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem;font-weight:600;color:var(--cb);}
+        .summary-icon {font-size:1.2rem;}
+        .summary-content {font-size:.9rem;color:var(--ct);line-height:1.6;}
+        .summary-edit {color:var(--cb);cursor:pointer;text-decoration:none;font-weight:600;display:inline-block;margin-top:.5rem;margin-left:auto;}
+        .success-msg {text-align:center;padding:2rem 1rem;}
+        .success-icon {font-size:4rem;margin-bottom:1rem;}
+        .success-title {font-size:1.5rem;color:var(--cb);font-weight:700;margin-bottom:.8rem;}
+        .success-text {color:var(--ct);margin-bottom:2rem;line-height:1.8;}
+        .floating-wa {position:fixed;bottom:2rem;right:1.5rem;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;cursor:pointer;box-shadow:var(--shl);transition:all .3s;z-index:99;text-decoration:none;}
+        .floating-wa:hover {transform:scale(1.1);box-shadow:0 15px 35px rgba(37,211,102,.4);}
+        @media (max-width:768px) {
+            .btns {flex-direction:column;gap:.8rem;}
+            main {padding:1rem;}
+            .floating-wa {width:50px;height:50px;font-size:1.5rem;bottom:1rem;right:1rem;}
+        }
+        .required {color:#EF4444;}
+        .note {background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:1rem;margin:1.5rem 0;font-size:.9rem;color:#92400E;line-height:1.6;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text"><span>ÓTICAS</span> | <span class="carol">CAROL</span></div>
+                <div class="logo-tagline">Vamos até você</div>
+            </div>
+            <button class="header-cta" id="headerCta" onclick="scrollToForm()">Agendar</button>
+        </div>
+    </header>
+
+    <div class="intro" id="introductionSection">
+        <section class="hero">
+            <div class="hero-cont">
+                <div class="badge">Exclusivo ABC Paulista</div>
+                <h1>Vamos até você!</h1>
+                <p>Deixe que uma de nossas especialistas leve as opções que você deseja no conforto da sua casa ou escritório.</p>
+                <button class="btn-hero" onclick="startBooking()">Agendar Visita Gratuita</button>
+            </div>
+        </section>
+
+        <section class="video-sec">
+            <div class="video-cont">
+                <h2 class="video-title">Nós Vamos até Você!</h2>
+                <div class="video-wrap">
+                    <iframe src="https://www.youtube.com/embed/_0eG0j-MhVw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="video-cta">
+                    <button class="video-cta-btn" onclick="startBooking()">Agendar Agora</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="benefits-cont">
+                <h2 class="title">Por Que Escolher Óticas Carol?</h2>
+                <div class="grid">
+                    <div class="card">
+                        <span class="icon">💼</span>
+                        <h3>Ótica Completa</h3>
+                        <p>Levamos uma maleta com armações e óculos de sol para você provar.</p>
+                    </div>
+                    <div class="card">
+                        <span class="icon">👓</span>
+                        <h3>Consultoria Técnica</h3>
+                        <p>Especialista dedicada para indicar a melhor opção para o seu caso.</p>
+                    </div>
+                    <div class="card">
+                        <span class="icon">🏠</span>
+                        <h3>Sem Sair de Casa</h3>
+                        <p>Da escolha ideal até a entrega final no seu endereço.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="form-sec" id="bookingSection">
+        <div class="progress-cont">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:33%"></div></div>
+            <div class="progress-labels">
+                <span>Local</span>
+                <span>Seus Dados</span>
+                <span>Agendamento</span>
+            </div>
+        </div>
+
+        <main>
+            <!-- STEP 1: LOCATION -->
+            <div class="step active" id="step1">
+                <h2 class="step-title">Verificar Disponibilidade</h2>
+                <p class="step-sub">Confirme sua localização para começar.</p>
+
+                <form id="locationForm">
+                    <div class="form-group">
+                        <label class="label">Cidade <span class="required">*</span></label>
+                        <select class="select" id="city" required>
+                            <option value="">Selecione a cidade</option>
+                            <option value="Mauá">Mauá</option>
+                            <option value="Ribeirão Pires">Ribeirão Pires</option>
+                            <option value="Santo André">Santo André</option>
+                            <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="neighborhoodGroup" style="display:none;">
+                        <label class="label">Bairro <span class="required">*</span></label>
+                        <select class="select" id="neighborhood" required>
+                            <option value="">Selecione o bairro</option>
+                        </select>
+                    </div>
+
+                    <div class="btns">
+                        <button type="button" class="btn btn-secondary" onclick="backToIntro()">Voltar</button>
+                        <button type="button" class="btn btn-primary" onclick="validateLocation()">Continuar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- STEP 2: PERSONAL DATA + ADDRESS (COMBINED) -->
+            <div class="step" id="step2">
+                <h2 class="step-title">Seus Dados</h2>
+                <p class="step-sub">Informações para agendar sua visita.</p>
+
+                <form id="personalForm">
+                    <div class="form-group">
+                        <label class="label">Nome Completo <span class="required">*</span></label>
+                        <input type="text" class="input" id="name" placeholder="Ex: Maria da Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">WhatsApp <span class="required">*</span></label>
+                        <input type="tel" class="input" id="phone" placeholder="(11) 99999-9999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">E-mail <span class="required">*</span></label>
+                        <input type="email" class="input" id="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Data de Nascimento <span class="required">*</span></label>
+                        <input type="date" class="input" id="birthDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Já é cliente? <span class="required">*</span></label>
+                        <select class="select" id="isCustomer" required>
+                            <option value="">Selecione</option>
+                            <option value="Não">Não</option>
+                            <option value="Sim">Sim</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Endereço <span class="required">*</span></label>
+                        <input type="text" class="input" id="address" placeholder="Ex: Av. Barão de Mauá" required>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div class="form-group">
+                            <label class="label">Número <span class="required">*</span></label>
+                            <input type="text" class="input" id="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Complemento <span class="required">*</span></label>
+                            <input type="text" class="input" id="complement" placeholder="Apt 12" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Local de Atendimento <span class="required">*</span></label>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                            <div class="radio-item">
+                                <input type="radio" name="locationType" id="home" value="Casa" required>
+                                <label for="home">🏠 Casa</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="locationType" id="work" value="Trabalho" required>
+                                <label for="work">💼 Trabalho</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Necessidades <span class="required">*</span></label>
+                        <div style="display:flex;flex-direction:column;gap:.8rem;">
+                            <div class="check-item">
+                                <input type="checkbox" name="needs" value="Óculos de grau">
+                                <label>Óculos de grau</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" name="needs" value="Óculos Multifocal">
+                                <label>Óculos Multifocal</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" name="needs" value="Lentes de Contato">
+                                <label>Lentes de Contato</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" name="needs" value="Óculos de Sol">
+                                <label>Óculos de Sol</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Observações (opcional)</label>
+                        <textarea class="textarea" id="observations" placeholder="Alguma preferência de marca ou estilo?"></textarea>
+                    </div>
+
+                    <div class="btns">
+                        <button type="button" class="btn btn-secondary" onclick="previousStep()">Voltar</button>
+                        <button type="button" class="btn btn-primary" onclick="validatePersonal()">Continuar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- STEP 3: SCHEDULING + SUMMARY -->
+            <div class="step" id="step3">
+                <h2 class="step-title">Agendamento</h2>
+                <p class="step-sub">Escolha o melhor momento para receber nossa especialista (Terças e Quintas).</p>
+
+                <div class="form-group">
+                    <label class="label">📅 Selecione o Dia <span class="required">*</span></label>
+                    <div id="dateOptions" style="display:grid;grid-template-columns:1fr;gap:1rem;"></div>
+                </div>
+
+                <div class="form-group" id="timeSlotGroup" style="display:none;">
+                    <label class="label">⏰ Período <span class="required">*</span></label>
+                    <div id="timeSlots"></div>
+                </div>
+
+                <div class="summary-card" id="summaryCard" style="display:none;margin:2rem 0;">
+                    <div class="summary-header">
+                        <span class="summary-icon">✅</span>
+                        <span>Resumo do Agendamento</span>
+                    </div>
+                    <div class="summary-content" id="summaryContent"></div>
+                </div>
+
+                <div class="note">
+                    <strong>ℹ️ Importante:</strong> Após confirmar, você será redirecionado para WhatsApp para completar o agendamento com nossa especialista.
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn btn-secondary" onclick="previousStep()">Voltar</button>
+                    <button type="button" class="btn btn-primary" id="continueBtn" onclick="sendToWhatsApp()" disabled>Agendar no WhatsApp</button>
+                </div>
+            </div>
+
+            <!-- SUCCESS -->
+            <div class="step" id="step4">
+                <div class="success-msg">
+                    <div class="success-icon">✅</div>
+                    <h2 class="success-title">Agendamento Confirmado!</h2>
+                    <p class="success-text">
+                        Obrigado por escolher Óticas Carol!<br><br>
+                        Uma de nossas especialistas entrará em contato em breve pelo WhatsApp para confirmar os detalhes da sua visita.
+                    </p>
+                    <a href="https://wa.me/5511925745445" target="_blank" class="btn btn-wa">💬 Continuar no WhatsApp</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <a href="https://wa.me/5511925745445?text=Olá,%20gostaria%20de%20informações%20sobre%20o%20atendimento%20domiciliar%20da%20Óticas%20Carol" target="_blank" class="floating-wa" title="WhatsApp">💬</a>
+
+    <script>
+        const neighborhoods = {
+            'Mauá': ["Centro", "Vila Bocaina", "Jardim Guapituba", "Parque São Vicente", "Vila Assis Brasil", "Jardim Zaíra", "Sertãozinho", "Vila Magini"],
+            'Ribeirão Pires': ["Centro", "Jardim Mirante", "Vila Aurora", "Ouro Fino", "Quarta Divisão", "Jardim Alvorada", "Santa Luzia"],
+            'Santo André': ["Centro", "Bairro Jardim", "Campestre", "Vila Assunção", "Vila Alpina", "Parque das Nações", "Camilópolis", "Vila Gilda", "Vila Pires", "Jardim Bela Vista", "Utinga", "Vila Curuçá", "Vila Humaitá", "Jardim Santo André"],
+            'São Bernardo do Campo': ["Centro", "Assunção", "Baeta Neves", "Bangu", "Batistini", "Berlim", "Botujuru", "Brasilândia", "Camilópolis", "Demarchi", "Ferrazópolis", "Floresta", "Independência", "Jordanópolis", "Laranjeiras", "Nova Petrópolis", "Pauliceia", "Roca Grande", "Santa Terezinha", "Taboão", "Terra Preta", "Vila América", "Vila Euclides", "Vila Humaitá", "Vila Marcondes", "Vila Pires", "Vila Planalto", "Vila Santa Helena"]
+        };
+
+        const timeSlots = [
+            { label: 'Manhã (08:00 - 12:00)', value: 'Manhã (08:00 - 12:00)' },
+            { label: 'Tarde (13:00 - 17:00)', value: 'Tarde (13:00 - 17:00)' }
+        ];
+
+        let currentStep = 0;
+        let formData = {
+            city: '', neighborhood: '', fullName: '', email: '', phone: '',
+            birthDate: '', isExistingCustomer: '', address: '', number: '',
+            complement: '', locationType: '', needs: [], observations: '',
+            selectedDate: '', selectedTimeSlot: ''
+        };
+
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxfGwPg9EX-VSblm5axxJSmc6QvdK-tC5SRqKKdBrhJmmKvH_IXWSFrXAjuLUvP18M1Dg/exec';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCityListener();
+            renderDateOptions();
+            trackPageView();
+        });
+
+        function getNextTuesdaysAndThursdays(startDate, numberOfDays) {
+            const dates = [];
+            let currentDate = new Date(startDate);
+            while (dates.length < numberOfDays) {
+                const dayOfWeek = currentDate.getDay();
+                if (dayOfWeek === 2 || dayOfWeek === 4) {
+                    const day = currentDate.getDate();
+                    const month = currentDate.getMonth();
+                    const year = currentDate.getFullYear();
+                    const dayName = dayOfWeek === 2 ? 'TER' : 'QUI';
+                    const monthNames = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+                    dates.push({day, month: monthNames[month], label: dayName, fullDate: new Date(year, month, day)});
+                }
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            return dates;
+        }
+
+        function startBooking() {
+            document.getElementById('introductionSection').classList.add('hidden');
+            document.getElementById('bookingSection').classList.add('active');
+            document.querySelector('.header-cta').style.display = 'block';
+            window.scrollTo(0, 0);
+            trackEvent('booking_started');
+        }
+
+        function backToIntro() {
+            document.getElementById('introductionSection').classList.remove('hidden');
+            document.getElementById('bookingSection').classList.remove('active');
+            document.querySelector('.header-cta').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToForm() {
+            document.getElementById('bookingSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function initializeCityListener() {
+            const citySelect = document.getElementById('city');
+            const neighborhoodGroup = document.getElementById('neighborhoodGroup');
+            const neighborhoodSelect = document.getElementById('neighborhood');
+
+            citySelect.addEventListener('change', function() {
+                formData.city = this.value;
+                neighborhoodGroup.style.display = this.value ? 'block' : 'none';
+                if (this.value && neighborhoods[this.value]) {
+                    neighborhoodSelect.innerHTML = '<option value="">Selecione o bairro</option>';
+                    neighborhoods[this.value].forEach(nb => {
+                        const option = document.createElement('option');
+                        option.value = nb;
+                        option.textContent = nb;
+                        neighborhoodSelect.appendChild(option);
+                    });
+                }
+            });
+
+            neighborhoodSelect.addEventListener('change', function() {
+                formData.neighborhood = this.value;
+            });
+        }
+
+        function renderDateOptions() {
+            const container = document.getElementById('dateOptions');
+            container.innerHTML = '';
+            const startDate = new Date(2026, 5, 16); // 16 de junho de 2026 (hoje - terça)
+            const appointmentDates = getNextTuesdaysAndThursdays(startDate, 4);
+
+            appointmentDates.forEach((date) => {
+                const div = document.createElement('div');
+                div.className = 'radio-item';
+                div.style.padding = '1rem';
+                div.innerHTML = `
+                    <input type="radio" name="date" id="date-${date.day}" value="${date.day}/${date.fullDate.getMonth() + 1}/${date.fullDate.getFullYear()}">
+                    <label for="date-${date.day}" style="flex:1;margin:0;">
+                        <strong>${date.day}</strong> de ${date.month} (<strong>${date.label}</strong>)
+                    </label>
+                `;
+                div.querySelector('input').addEventListener('change', function() {
+                    formData.selectedDate = this.value;
+                    document.getElementById('timeSlotGroup').style.display = 'block';
+                    renderTimeSlots();
+                });
+                container.appendChild(div);
+            });
+        }
+
+        function renderTimeSlots() {
+            const container = document.getElementById('timeSlots');
+            container.innerHTML = '';
+            timeSlots.forEach((slot, index) => {
+                const div = document.createElement('div');
+                div.className = 'radio-item';
+                div.innerHTML = `
+                    <input type="radio" name="timeSlot" id="slot${index}" value="${slot.value}">
+                    <label for="slot${index}">${slot.label}</label>
+                `;
+                div.querySelector('input').addEventListener('change', function() {
+                    formData.selectedTimeSlot = this.value;
+                    document.getElementById('continueBtn').disabled = false;
+                    populateSummary();
+                    trackEvent('time_slot_selected', { time: this.value });
+                });
+                container.appendChild(div);
+            });
+        }
+
+        function populateSummary() {
+            document.getElementById('summaryCard').style.display = 'block';
+            document.getElementById('summaryContent').innerHTML = `
+                <strong>${formData.fullName}</strong><br>
+                📍 ${formData.address}, ${formData.number}${formData.complement ? ' - ' + formData.complement : ''}<br>
+                ${formData.city} - ${formData.neighborhood}<br>
+                📅 ${formData.selectedDate} | ⏰ ${formData.selectedTimeSlot}
+            `;
+        }
+
+        function previousStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                updateStepDisplay();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function updateStepDisplay() {
+            document.querySelectorAll('.step').forEach((step, index) => {
+                step.classList.remove('active');
+                if (index === currentStep) step.classList.add('active');
+            });
+            document.getElementById('progressFill').style.width = ((currentStep + 1) / 3) * 100 + '%';
+            window.scrollTo(0, 0);
+        }
+
+        function validateLocation() {
+            if (!formData.city || !formData.neighborhood) {
+                alert('Por favor, selecione cidade e bairro');
+                return;
+            }
+            trackEvent('location_verified', { city: formData.city });
+            currentStep = 1;
+            updateStepDisplay();
+        }
+
+        function validatePersonal() {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const birthDate = document.getElementById('birthDate').value;
+            const isCustomer = document.getElementById('isCustomer').value;
+            const address = document.getElementById('address').value.trim();
+            const number = document.getElementById('number').value.trim();
+            const complement = document.getElementById('complement').value.trim();
+            const locationType = document.querySelector('input[name="locationType"]:checked');
+
+            if (!name || !phone || !email || !birthDate || !isCustomer || !address || !number || !complement || !locationType) {
+                alert('Por favor, preencha todos os campos obrigatórios');
+                return;
+            }
+
+            const needs = [];
+            document.querySelectorAll('input[name="needs"]:checked').forEach(cb => {
+                needs.push(cb.value);
+            });
+
+            if (needs.length === 0) {
+                alert('Por favor, selecione pelo menos uma necessidade');
+                return;
+            }
+
+            formData.fullName = name;
+            formData.phone = phone;
+            formData.email = email;
+            formData.birthDate = birthDate;
+            formData.isExistingCustomer = isCustomer;
+            formData.address = address;
+            formData.number = number;
+            formData.complement = complement;
+            formData.locationType = locationType.value;
+            formData.needs = needs;
+            formData.observations = document.getElementById('observations').value;
+
+            trackEvent('personal_data_entered', { name: name });
+            currentStep = 2;
+            updateStepDisplay();
+        }
+
+        function sendToWhatsApp() {
+            if (!formData.selectedDate || !formData.selectedTimeSlot) {
+                alert('Por favor, selecione data e horário');
+                return;
+            }
+
+            const message = `
+Olá! Gostaria de confirmar meu agendamento:
+
+👤 *CLIENTE*
+Nome: ${formData.fullName}
+Telefone: ${formData.phone}
+Email: ${formData.email}
+Data Nascimento: ${formData.birthDate}
+Cliente há: ${formData.isExistingCustomer}
+
+📍 *LOCALIZAÇÃO*
+${formData.address}, ${formData.number} - ${formData.complement}
+${formData.city}, ${formData.neighborhood}
+Local: ${formData.locationType}
+
+📋 *NECESSIDADES*
+${formData.needs.join(', ')}
+
+📅 *AGENDAMENTO*
+Data: ${formData.selectedDate}
+Horário: ${formData.selectedTimeSlot}
+
+${formData.observations ? `📝 Observações: ${formData.observations}` : ''}
+            `;
+
+            saveLeadData();
+            trackEvent('booking_confirmed', { customer: formData.fullName });
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5511925745445?text=${encodedMessage}`, '_blank');
+
+            currentStep = 3;
+            updateStepDisplay();
+        }
+
+        function saveLeadData() {
+            const data = new URLSearchParams();
+            data.append('fullName', formData.fullName);
+            data.append('phone', formData.phone);
+            data.append('email', formData.email);
+            data.append('birthDate', formData.birthDate);
+            data.append('isExistingCustomer', formData.isExistingCustomer);
+            data.append('city', formData.city);
+            data.append('neighborhood', formData.neighborhood);
+            data.append('address', formData.address);
+            data.append('number', formData.number);
+            data.append('complement', formData.complement);
+            data.append('locationType', formData.locationType);
+            data.append('needs', formData.needs.join(', '));
+            data.append('observations', formData.observations);
+            data.append('selectedDate', formData.selectedDate);
+            data.append('selectedTimeSlot', formData.selectedTimeSlot);
+
+            fetch(GOOGLE_APPS_SCRIPT_URL, {
+                method: 'POST',
+                body: data
+            }).then(response => {
+                console.log('✅ Dados salvos com sucesso!');
+                fbq('track', 'Lead');
+            }).catch(error => {
+                console.log('⚠️ Erro ao salvar:', error);
+            });
+        }
+
+        function trackPageView() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    'page_title': 'Agendamento Óticas Carol',
+                    'page_location': window.location.href
+                });
+            }
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent');
+            }
+        }
+
+        function trackEvent(eventName, data = {}) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, data);
+            }
+        }
+    </script>
+</body>
+</html>
