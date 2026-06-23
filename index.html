@@ -502,16 +502,21 @@
         function renderDateOptions() {
             const container = document.getElementById('dateOptions');
             container.innerHTML = '';
-            const startDate = new Date(2026, 5, 16); // 16 de junho de 2026 (hoje - terça)
-            const appointmentDates = getNextTuesdaysAndThursdays(startDate, 4);
+            // Datas dinâmicas: começa a partir de AMANHÃ e sempre mostra as próximas
+            // terças e quintas disponíveis (atualiza sozinho conforme o tempo passa).
+            const startDate = new Date();
+            startDate.setHours(0, 0, 0, 0);
+            startDate.setDate(startDate.getDate() + 1);
+            const appointmentDates = getNextTuesdaysAndThursdays(startDate, 6);
 
             appointmentDates.forEach((date) => {
                 const div = document.createElement('div');
                 div.className = 'radio-item';
                 div.style.padding = '1rem';
+                const inputId = `date-${date.fullDate.getDate()}-${date.fullDate.getMonth() + 1}`;
                 div.innerHTML = `
-                    <input type="radio" name="date" id="date-${date.day}" value="${date.day}/${date.fullDate.getMonth() + 1}/${date.fullDate.getFullYear()}">
-                    <label for="date-${date.day}" style="flex:1;margin:0;">
+                    <input type="radio" name="date" id="${inputId}" value="${date.day}/${date.fullDate.getMonth() + 1}/${date.fullDate.getFullYear()}">
+                    <label for="${inputId}" style="flex:1;margin:0;">
                         <strong>${date.day}</strong> de ${date.month} (<strong>${date.label}</strong>)
                     </label>
                 `;
